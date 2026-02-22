@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Allotment Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Generated Rooms</h2>
+
+            {% if files %}
+                <ul class="list-group">
+                    {% for f in files %}
+                        <li class="list-group-item d-flex justify-content-between">
+                            {{ f }}
+                            <a href="/download/{{ f }}" class="btn btn-sm btn-success">Download</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No files generated.</p>
+            {% endif %}
+
+            <a href="/" class="btn btn-secondary mt-3">Back</a>
+        </div>
+
+    </div>
+</body>
+</html>
